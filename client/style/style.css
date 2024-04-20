@@ -1,0 +1,219 @@
+
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: end;
+  gap: 25px;
+  margin-top: -50px;
+}
+
+.card {
+  box-shadow: 0 2px 29px var(--color-neutral-very-dark-blue);
+  position: relative;
+  transition: ease 0.5s;
+}
+
+.card:hover {
+  transform: scale(101%);
+}
+
+.fylo-card {
+  background-color: var(--color-neutral-dark-blue);
+  width: 360px;
+  padding: 40px;
+  border-radius: 10px 70px 10px 10px;
+  animation: enter-fylo-card 2s;
+}
+
+.fylo-card .logo {
+  margin-bottom: 30px;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.buttons button, .buttons label {
+  background-color: var(--color-neutral-very-dark-blue);
+  width: 45px;
+  height: 45px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  transition: ease 0.4s;
+}
+
+.buttons button:hover {
+  background-color: var(--color-neutral-hover-blue);
+}
+
+.buttons label:hover {
+  background-color: var(--color-neutral-hover-blue);
+}
+
+.buttons button > img, .buttons label > img {
+  height: 20px;
+}
+
+#loading-icon {
+  height: 35px;
+}
+
+.storage-card {
+  background-color: var(--color-neutral-dark-blue);
+  padding: 35px;
+  width: 550px;
+  border-radius: 10px;
+  position: relative;
+  animation: enter-storage-card 2s;
+}
+
+.card-top > p {
+  color: var(--color-neutral-pale-blue);
+  margin-bottom: 15px;
+}
+
+.card-top > p > span {
+  font-weight: 800;
+  color: var(--color-neutral-pale-blue);
+}
+
+.storage-left {
+  background-color: #fff;
+  width: 150px;
+  height: 56px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  position: absolute;
+  top: -25px;
+  right: 35px;
+  animation: jump 1s infinite alternate;
+}
+
+.storage-left::after {
+  content: '';
+  display: block;
+  background-color: transparent;
+  border: 15px;
+  border-style: solid;
+  border-color: #fff #fff transparent transparent;
+  position: absolute;
+  right: 0;
+  bottom: -16px;
+}
+
+.storage-left > span:first-child {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--color-neutral-very-dark-blue);
+  margin-right: 10px;
+  /* counter-reset: storage-counter;
+  & > i {
+    counter-increment: storage-counter;
+  }
+  & > i:nth-child(185)::before {
+    content: counter(storage-counter);
+  } */
+}
+
+.storage-left > span:first-child > i:nth-child(1)::before {
+  content: '1';
+  animation: increase-hundreds 8s;
+}
+
+.storage-left > span:first-child > i:nth-child(2)::before {
+  content: '8';
+  animation: increase-dozens 4.8s;
+}
+
+.storage-left > span:first-child > i:nth-child(3)::before {
+  content: '5';
+  animation: increase-ones 0.4s 12;
+}
+
+.storage-left > span:last-child {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-neutral-grayish-blue);
+  text-transform: uppercase;
+}
+
+.storage-card .storage-bar-container {
+  background-color: var(--color-neutral-very-dark-blue);
+  height: 14px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.storage-bar-container .storage-bar {
+  background: linear-gradient(
+    45deg,
+    var(--color-primary-gradient-orange),
+    var(--color-primary-gradient-pink)
+  );
+  height: 14px;
+  width: 80%;
+  padding: 0 1.5px;
+  border-radius: calc(14px / 2);
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  animation: increase-bar 5s;
+}
+
+.storage-bar-container .storage-bar::after {
+  content: '';
+  display: block;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: var(--color-neutral-pale-blue);
+}
+
+.card-bottom {
+  color: var(--color-neutral-pale-blue);
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (max-width: 700px) {
+  body {
+    background: url('../images/bg-mobile.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  main {
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .storage-card {
+    padding-bottom: 60px;
+  }
+
+  .storage-left {
+    position: absolute;
+    top: calc(100% - (70px / 2));
+    right: calc(50% - (150px / 2));
+  }
+
+  .storage-left::after {
+    display: none;
+  }
+}
+
+

@@ -1,0 +1,79 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  position: relative;
+  animation: enter-from-top 2s;
+}
+
+.auth h3 {
+  color: var(--color-neutral-pale-blue);
+  font-size: 25px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form input {
+  font-size: 16px;
+  color: var(--color-neutral-pale-blue);
+  background-color: transparent;
+  width: 300px;
+  padding: 14px 15px;
+  border: 0 0 1px 1px;
+  border-style: solid;
+  border-color: var(--color-neutral-pale-blue);
+  outline: none;
+  border-radius: 10px;
+}
+
+.auth-form input:nth-child(1) {
+  margin-bottom: 25px;
+}
+
+.auth-form input:nth-child(2) {
+  margin-bottom: 10px;
+}
+
+.auth-form input::placeholder {
+  color: var(--color-neutral-grayish-blue);
+}
+
+.auth-form p {
+  font-size: 12px;
+  color: var(--color-neutral-pale-blue);
+  margin-bottom: 20px;
+}
+
+.auth-form a {
+  color: var(--color-neutral-grayish-blue);
+  text-decoration: none;
+}
+
+.auth-form > .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.auth-form > .buttons > button {
+  color: var(--color-neutral-pale-blue);
+  background-color: transparent;
+  font-size: 16px;
+  width: 80px;
+  border: 2.5px solid var(--color-neutral-pale-blue);
+  transition: linear 0.3s;
+}
+
+.auth-form > .buttons > button:hover {
+  transform: scale(104%);
+}
+
+.auth-form > .buttons > button:last-child {
+  color: blue;
+  border-color: blue;
+}
+

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="./style/base.css" />
+    <link rel="stylesheet" href="./style/animation.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/popup.css" />
+    <link rel="stylesheet" href="./style/auth.css" />
+
+    <title>Frontend Mentor | Fylo data storage component</title>
+  </head>
+  <body>
+    <main>
+      <!-- <a
+        href="https://th.bing.com/th/id/OIP.c17XAqg6srb_lo1ElbyJSgAAAA?rs=1&pid=ImgDetMain"
+        download="ImgDetMain.png"
+        target="_blank"
+        >download</a
+      > -->
+      <section class="card fylo-card">
+        <img src="./images/logo.svg" alt="" class="logo" />
+        <div class="buttons">
+          <button id="document-button">
+            <img src="./images/icon-document.svg" alt="" />
+          </button>
+          <button id="folder-button">
+            <img src="./images/icon-folder.svg" alt="" />
+          </button>
+          <form
+            id="file-upload-form"
+            action="http://localhost:3000/api/v1/files"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <label for="file-input" id="upload-button">
+              <img id="upload-icon" src="./images/icon-upload.svg" alt="" />
+              <img
+                id="loading-icon"
+                style="display: none"
+                src="./images/icon-loading.svg"
+                alt=""
+              />
+              <img
+                id="success-icon"
+                style="display: none"
+                src="./images/check.png"
+                alt=""
+              />
+              <img
+                id="failed-icon"
+                style="display: none"
+                src="./images/failed.png"
+                alt=""
+              />
+              <input
+                style="display: none"
+                type="file"
+                name="file"
+                title="file"
+                id="file-input"
+              />
+            </label>
+          </form>
+        </div>
+      </section>
+
+      <section class="card storage-card">
+        <div class="card-top">
+          <p>You’ve used <span>815 GB</span> of your storage</p>
+          <div class="storage-left">
+            <span>
+              <i> </i>
+              <i> </i>
+              <i> </i>
+            </span>
+            <span>GB Left</span>
+          </div>
+        </div>
+
+        <div class="storage-bar-container">
+          <div class="storage-bar"></div>
+        </div>
+
+        <div class="card-bottom">
+          <p>0 GB</p>
+          <p>1000 GB</p>
+        </div>
+      </section>
+
+      <div class="overlay" style="display: none"></div>
+      <div class="popup" style="display: none">
+        <h3>Your files</h3>
+        <div class="files">
+          <div class="file-card">
+            <div class="left-side">
+              <img src="./images/icon-document.svg" alt="" />
+              <a class="file-name">file name</a>
+            </div>
+            <div class="buttons">
+              <button>remove</button>
+              <button>download</button>
+            </div>
+          </div>
+        </div>
+        <button class="close-button">close</button>
+      </div>
+
+      <section class="auth login" style="display: none">
+        <h3 class="login-title">Welcome back</h3>
+        <form class="auth-form login-form">
+          <input type="text" placeholder="email@gmail.com" id="login-email" />
+          <input type="password" placeholder="password" id="login-password" />
+          <p class="register-link">
+            Don't have account?<a href=""> register</a>
+          </p>
+          <div class="buttons">
+            <button title="cancel" name="cancel" id="cancel-login">
+              cancel
+            </button>
+            <button type="submit" title="login" name="login" id="login">
+              login
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section class="auth register" style="display: none">
+        <h3 class="register-title">Create account</h3>
+        <form class="auth-form register-form">
+          <input
+            type="text"
+            placeholder="email@gmail.com"
+            id="register-email"
+          />
+          <input
+            type="password"
+            placeholder="password"
+            id="register-password"
+          />
+          <p class="login-link">
+            Already have an account?<a href=""> login</a>
+          </p>
+          <div class="buttons">
+            <button title="cancel" name="cancel" id="cancel-register">
+              cancel
+            </button>
+            <button
+              type="submit"
+              title="register"
+              name="register"
+              id="register"
+            >
+              register
+            </button>
+          </div>
+        </form>
+      </section>
+    </main>
+    <script src="js/constants.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/script.js"></script>
+    <script src="js/register.js"></script>
+    <script src="js/login.js"></script>
+  </body>
+</html>

@@ -1,0 +1,129 @@
+.overlay {
+  background-color: rgba(0, 0, 0, 0.040);
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.popup {
+  width: 500px;
+  background-color: var(--color-neutral-dark-blue);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 2px 29px var(--color-neutral-very-dark-blue);
+  display: flex;
+  flex-direction: column;
+  z-index: 9999;
+  animation: display 2s;
+}
+
+.popup h3 {
+  color: var(--color-neutral-pale-blue);
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+.popup .close-button {
+  font-size: 14px;
+  background-color: transparent;
+  color: var(--color-neutral-pale-blue);
+  border: 2px solid var(--color-neutral-pale-blue);
+  padding: 10px 15px;
+  border-radius: 5px;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: linear .3s;
+}
+
+.popup .close-button:hover {
+  background-color: var(--color-neutral-very-dark-blue);
+}
+
+.popup .files {
+  height: 250px;
+  padding: 10px;
+  font-size: 16px;
+  text-align: center;
+  overflow-y: scroll;
+}
+
+.popup .files::-webkit-scrollbar {
+  width: 0;
+}
+
+.popup .files::-webkit-scrollbar-thumb {
+  display: none;
+}
+
+.file-card {
+  width: 430px;
+  box-shadow: 0 2px 10px var(--color-neutral-very-dark-blue);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.file-card .left-side {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.file-card .left-side > img {
+  height: 16px;
+}
+
+.file-name {
+  width: 200px;
+  font-size: 16px;
+  color: var(--color-neutral-pale-blue);
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  text-wrap: nowrap;
+  overflow-x: scroll;
+}
+
+.file-name::-webkit-scrollbar {
+  display: none;
+}
+
+.file-name:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.file-card > .buttons > button,  .file-card > .buttons > a{
+  background-color: var(--color-neutral-very-dark-blue);
+  font-size: 14px;
+  font-weight: 500;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: 40px;
+  color: var(--color-neutral-pale-blue);
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 500px) {
+  .popup {
+    width: 100%;
+  }
+  .file-card {
+    width: 100%;
+  }
+  .file-name {
+    width: 100px;
+  }
+}

@@ -1,0 +1,34 @@
+:root {
+  --color-primary-gradient-orange: hsl(6, 100%, 80%);
+  --color-primary-gradient-pink: hsl(335, 100%, 65%);
+  --color-neutral-pale-blue: hsl(243, 100%, 93%);
+  --color-neutral-grayish-blue: hsl(229, 7%, 55%);
+  --color-neutral-dark-blue: hsl(228, 56%, 26%);
+  --color-neutral-very-dark-blue: hsl(229, 57%, 11%);
+  --color-neutral-hover-blue: hsl(229, 57%, 20%);
+
+  --font-size: 14px;
+  --font-family: 'Raleway', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--color-neutral-very-dark-blue);
+  background-image: url('../images/bg-desktop.png');
+  background-repeat: no-repeat;
+  background-position-y: bottom;
+  background-size: contain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  padding: 0 20px;
+  overflow: hidden;
+}
