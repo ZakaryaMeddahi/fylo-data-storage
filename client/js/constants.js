@@ -20,3 +20,4 @@ const successIcon = document.getElementById('success-icon');
 const failedIcon = document.getElementById('failed-icon');
 
 const BASE_URL = 'https://fylo-data-storage-g1a5.onrender.com/api/v1';
+// const BASE_URL = 'http://localhost:3000/api/v1';
