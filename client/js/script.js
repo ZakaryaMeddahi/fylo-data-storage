@@ -69,7 +69,11 @@ const displayFiles = async (e) => {
     });
 
     if (!response.ok) {
-      response.status === 401 && toggleRegisterForm(true);
+      if (response.status === 401) {
+        localStorage.removeItem('token');
+        toggleRegisterForm(true);
+      }
+
       throw new Error(response.statusText);
     }
 
@@ -118,6 +122,8 @@ const uploadFile = async (e) => {
       // get file
       const formData = new FormData(form);
 
+      console.log(formData);
+
       // send file
       const response = await fetch(url, {
         method: method,
@@ -127,7 +133,12 @@ const uploadFile = async (e) => {
         body: formData,
       });
 
+      console.log(response);
+
+      // TODO: Fix authorization
       if (!response.ok) {
+        console.log(response.ok);
+        response.status === 401 && toggleRegisterForm(true);
         throw new Error(response.statusText);
       }
 
